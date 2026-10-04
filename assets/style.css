@@ -77,7 +77,6 @@ header.topo .container { display: flex; align-items: center; gap: 10px; }
   border-radius: 16px;
   min-height: 220px;
   background-color: var(--cor-borda);
-  background-image: var(--imagem-hero, none);
   background-size: cover;
   background-position: center;
 }
