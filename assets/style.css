@@ -73,12 +73,18 @@ header.topo .container { display: flex; align-items: center; gap: 10px; }
 }
 
 .hero-foto {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
   margin-top: 24px;
   border-radius: 16px;
-  min-height: 220px;
   background-color: var(--cor-borda);
-  background-size: cover;
-  background-position: center;
+  object-fit: cover;
+  object-position: center 35%;
+}
+
+@media (max-width: 600px) {
+  .hero-foto { aspect-ratio: 4 / 3; }
 }
 
 /* Disclosure / atualização */
