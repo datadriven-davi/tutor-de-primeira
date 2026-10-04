@@ -87,6 +87,16 @@ header.topo .container { display: flex; align-items: center; gap: 10px; }
   .hero-foto { aspect-ratio: 4 / 3; }
 }
 
+.kicker {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--cor-principal-escura);
+  margin-bottom: 10px;
+}
+
 /* Disclosure / atualização */
 
 .disclosure {
@@ -109,6 +119,8 @@ header.topo .container { display: flex; align-items: center; gap: 10px; }
 .resumo-rapido h2, .resposta-rapida h2 { font-size: 1.1rem; margin-bottom: 12px; }
 .resumo-rapido ol { padding-left: 20px; }
 .resumo-rapido li { margin-bottom: 6px; }
+.resumo-rapido a { color: var(--cor-principal-escura); text-decoration: none; }
+.resumo-rapido a:hover { text-decoration: underline; }
 
 .resposta-rapida {
   border-left: 4px solid var(--cor-principal);
@@ -213,12 +225,30 @@ article ul li { margin-bottom: 8px; }
 }
 
 .produto-card {
+  position: relative;
   background: var(--cor-card);
   border: 1px solid var(--cor-borda);
   border-radius: 14px;
   padding: 18px;
   display: flex;
   flex-direction: column;
+}
+
+.produto-card.destaque {
+  border: 2px solid var(--cor-secundaria);
+  box-shadow: 0 6px 18px rgba(47, 111, 98, 0.15);
+}
+
+.produto-card.destaque .ribbon {
+  position: absolute;
+  top: -12px;
+  left: 14px;
+  background: var(--cor-secundaria);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 999px;
 }
 
 .produto-card .icone {
@@ -242,7 +272,7 @@ article ul li { margin-bottom: 8px; }
 
 .produto-card h3 { font-size: 1rem; margin-bottom: 6px; }
 .produto-card p { font-size: 0.88rem; color: var(--cor-texto-suave); margin-bottom: 10px; flex-grow: 1; }
-.produto-card .preco { font-size: 0.85rem; font-weight: 600; color: var(--cor-texto); margin-bottom: 10px; }
+.produto-card .preco { font-size: 1.05rem; font-weight: 700; color: var(--cor-principal-escura); margin-bottom: 10px; }
 
 .produto-card .cta-link {
   text-align: center;
@@ -292,7 +322,42 @@ footer .disclosure-footer {
   font-size: 0.8rem;
 }
 
+footer .metodologia {
+  max-width: 560px;
+  margin: 0 auto 14px;
+  font-size: 0.8rem;
+  color: var(--cor-texto-suave);
+}
+
 footer a { color: var(--cor-texto-suave); }
+
+/* CTA fixo mobile */
+
+.cta-fixa-mobile { display: none; }
+
+@media (max-width: 600px) {
+  .cta-fixa-mobile {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    background: var(--cor-card);
+    border-top: 1px solid var(--cor-borda);
+    padding: 10px 16px;
+    box-shadow: 0 -6px 16px rgba(0, 0, 0, 0.08);
+  }
+
+  .cta-fixa-mobile .cta-link {
+    display: block;
+    text-align: center;
+    margin-top: 0;
+    width: 100%;
+  }
+
+  body { padding-bottom: 68px; }
+}
 
 @media (max-width: 600px) {
   .hero h1 { font-size: 1.6rem; }
